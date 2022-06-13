@@ -1,12 +1,12 @@
 import React from 'react';
-import UserMenu from "./UserMenu.jsx";
+import UserMenu from './UserMenu.jsx';
 
 class Header extends React.Component {
   render() {
     return (
-        <header className="header">
-          <UserMenu />
-        </header>
+      <header className="header">
+        <UserMenu />
+      </header>
     );
   }
 }

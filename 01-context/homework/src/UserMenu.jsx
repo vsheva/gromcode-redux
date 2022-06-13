@@ -1,5 +1,5 @@
 import React from 'react';
-import { Context } from './userData-context.js';
+import {Context} from "./userData-context.js"
 
 class UserMenu extends React.Component {
   render() {
@@ -11,7 +11,6 @@ class UserMenu extends React.Component {
     );
   }
 }
-
-UserMenu.contextType = Context;
-
+UserMenu.propTypes = Context
 export default UserMenu;
+

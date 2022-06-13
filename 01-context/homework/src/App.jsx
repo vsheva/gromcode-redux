@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Header.jsx';
-import {userData, Context} from './userData-context.js';
+import {userData, Context} from "./userData-context.js"
 
 
 class App extends React.Component {
@@ -12,9 +12,9 @@ class App extends React.Component {
   render() {
     return (
         <div className="page">
-            <Context.Provider value={this.state.userData}>
+         <Context.Provider value={this.state.userData}>
           <Header />
-          </Context.Provider>
+         </Context.Provider>
         </div>
     );
   }
