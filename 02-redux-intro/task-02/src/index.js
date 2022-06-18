@@ -29,4 +29,3 @@ store.subscribe(() => {
   resultElem.textContent = state.history.length ? `${historyString}=${currentValue}` : '';
 });
 
-//resultElem.textContent = state.history.length === 0 ? '' : `${historyString}=${currentValue}`;
