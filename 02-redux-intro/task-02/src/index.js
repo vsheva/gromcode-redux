@@ -29,3 +29,13 @@ store.subscribe(() => {
   resultElem.textContent = state.history.length ? `${historyString}=${currentValue}` : '';
 });
 
+/*
+store.subscribe(() => {
+  const state = store.getState();
+  const currentValue = state.value;
+  const historyString = state.history.join('');
+  resultElem.textContent = `${historyString}=${currentValue}`;
+});
+*/
+
+//console.log(store.getState().history) // ['+1', -1, '+1', '+1', -1]
