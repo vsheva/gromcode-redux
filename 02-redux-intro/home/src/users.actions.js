@@ -1,11 +1,11 @@
 const ADD = 'USER/ADD';
 const DELETE = 'USER/DELETE';
 
-export const addUser = newUser => {
+export const addUser = newUserData => {
   return {
     type: ADD,
-     name: newUser.name,
-     id: newUser.id,
+     name: newUserData.name,
+     id: newUserData.id,
   };
 };
 
