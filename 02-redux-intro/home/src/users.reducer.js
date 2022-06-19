@@ -1,4 +1,5 @@
-import {ADD, DELETE} from "./users.actions.js"
+const ADD = 'USER/ADD';
+const DELETE = 'USER/DELETE';
 
 const initialState = {
     usersList: [],
@@ -9,12 +10,12 @@ const usersReducer = (state = initialState, action) => {
         case ADD:
             return {
                 ...state,
-                usersList: state.usersList.concat(user), // <---- ?
+                usersList: state.usersList.concat(), // <---- ?
             };
         case DELETE:
             return {
                 ...state,
-                usersList: state.usersList.filter(()=>),  //<----- ?
+                usersList: state.usersList.filter(),  //<----- ?
             };
 
         default:
