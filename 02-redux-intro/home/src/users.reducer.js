@@ -4,8 +4,6 @@ const DELETE = 'USER/DELETE';
 const initialState = { usersList: [] }
 
 export const userReducer = (state = initialState, action) => {
-  // console.log('action.newUser:', action.newUser);
-  // console.log('action.id: ', action.id);
 
   switch (action.type) {
     case ADD:
@@ -23,3 +21,5 @@ export const userReducer = (state = initialState, action) => {
   }
 };
 
+// console.log('action.newUser:', action.newUser);
+// console.log('action.id: ', action.id);
