@@ -3,7 +3,7 @@ const DELETE = 'USER/DELETE';
 
 const initialState = { usersList: [] }
 
-export const reducer = (state = initialState, action) => {
+export const userReducer = (state = initialState, action) => {
   // console.log('action.newUser:', action.newUser);
   // console.log('action.id: ', action.id);
 
