@@ -3,8 +3,7 @@ const DELETE = 'USER/DELETE';
 
 const initialState = { usersList: [] }
 
-
- const reducer = (state = initialState, action) => {
+export const userReducer = (state = initialState, action) => {
   // console.log('action.newUser:', action.newUser);
   // console.log('action.id: ', action.id);
 
@@ -21,9 +20,6 @@ const initialState = { usersList: [] }
             return  item.id !== action.id
         }),
       };
-    default:
-      return state;
   }
 };
 
-export default reducer
