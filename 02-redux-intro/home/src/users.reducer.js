@@ -1,7 +1,9 @@
 const ADD = 'USER/ADD';
 const DELETE = 'USER/DELETE';
 
-export const reducer = (state = { usersList: [] }, action) => {
+const initialState = { usersList: [] }
+
+export const reducer = (state = initialState, action) => {
   // console.log('action.newUser:', action.newUser);
   // console.log('action.id: ', action.id);
 
@@ -15,7 +17,7 @@ export const reducer = (state = { usersList: [] }, action) => {
       return {
         ...state,
         usersList: state.usersList.filter(item => {
-            return  item.id != action.id
+            return  item.id !== action.id
         }),
       };
   }
