@@ -6,6 +6,9 @@ const incrementBtn = document.querySelector("[data-action='increment']");
 const resetBtn = document.querySelector("[data-action='reset']");
 const decrementBtn = document.querySelector("[data-action='decrement']");
 
+
+//store.dispatch(action)
+
 const onIncrement = () => {
   store.dispatch(increment());
 };
@@ -21,6 +24,9 @@ const onReset = () => {
 incrementBtn.addEventListener('click', onIncrement);
 decrementBtn.addEventListener('click', onDecrement);
 resetBtn.addEventListener('click', onReset);
+
+//подписка на изменение state
+//получить состояние
 
 store.subscribe(() => {
   const state = store.getState();
