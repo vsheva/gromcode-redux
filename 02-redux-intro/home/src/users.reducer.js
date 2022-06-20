@@ -15,8 +15,7 @@ export const reducer = (state = { usersList: [] }, action) => {
       return {
         ...state,
         usersList: state.usersList.filter(item => {
-            return !item.includes(action.id)
-
+            return  item.id != action.id
         }),
       };
   }
