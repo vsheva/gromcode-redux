@@ -27,7 +27,7 @@ const initialState = {
   history: [],
 };
 
-const counterReducer = (state = {history: [],}, action) => {
+const counterReducer = (state = { history: [] }, action) => {
   switch (action.type) {
     case INCREMENT:
       return {
@@ -54,4 +54,4 @@ const counterReducer = (state = {history: [],}, action) => {
 
 const store = createStore(counterReducer);
 
-export default store
+export default store;
