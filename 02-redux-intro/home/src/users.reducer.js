@@ -20,6 +20,8 @@ const userReducer = (state = initialState, action) => {
             return  item.id !== action.id
         }),
       };
+    default:
+      return state;
   }
 };
 
