@@ -1,7 +1,5 @@
-// const ADD = 'USER/ADD';
-// const DELETE = 'USER/DELETE';
-
-import { ADD, DELETE } from './users.actions';
+const ADD = 'USER/ADD';
+const DELETE = 'USER/DELETE';
 
 const initialState = { usersList: [] }
 
