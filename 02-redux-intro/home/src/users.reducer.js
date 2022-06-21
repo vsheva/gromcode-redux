@@ -1,7 +1,7 @@
-import store from "./store";
+// const ADD = 'USER/ADD';
+// const DELETE = 'USER/DELETE';
 
-const ADD = 'USER/ADD';
-const DELETE = 'USER/DELETE';
+import { ADD, DELETE } from './users.actions';
 
 const initialState = { usersList: [] }
 
