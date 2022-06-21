@@ -1,9 +1,11 @@
+import store from "./store";
+
 const ADD = 'USER/ADD';
 const DELETE = 'USER/DELETE';
 
 const initialState = { usersList: [] }
 
-export const userReducer = (state = initialState, action) => {
+const userReducer = (state = initialState, action) => {
 
   switch (action.type) {
     case ADD:
@@ -20,6 +22,8 @@ export const userReducer = (state = initialState, action) => {
       };
   }
 };
+
+export default userReducer
 
 // console.log('action.newUser:', action.newUser);
 // console.log('action.id: ', action.id);
