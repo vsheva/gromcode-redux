@@ -1,3 +1,5 @@
+//action
+
 const ADD = 'USER/ADD';
 const DELETE = 'USER/DELETE';
 

@@ -1,9 +1,11 @@
+//reducer
+
 const ADD = 'USER/ADD';
 const DELETE = 'USER/DELETE';
 
-const initialState = { usersList: [] }
+//const initialState = { usersList: [] }
 
-const userReducer = (state = initialState, action) => {
+const userReducer = (state = { usersList: [] }, action) => {
 
   switch (action.type) {
     case ADD:

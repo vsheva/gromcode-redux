@@ -1,6 +1,8 @@
 import store from './store';
 import { addUser, deleteUser } from './users.actions';
 
+//subscribe(getState), dispatch(action)
+
 store.subscribe(() => {
   console.log(store.getState());
 });
