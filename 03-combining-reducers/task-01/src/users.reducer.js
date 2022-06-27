@@ -1,5 +1,51 @@
-//reducer - создает новый стейт на основании actions и prev state
+import { ADD_USER, DELETE_USER, UPDATE_USER } from './users.actions';
 
+const initialState = {
+    usersList: [],
+};
+
+ const usersReducer = (state = initialState, { type, payload }) => {
+    switch (type) {
+        case ADD_USER: {
+            return {
+                ...state,
+                usersList: state.usersList.concat(payload.userData),
+            };
+        }
+        case DELETE_USER: {
+            return {
+                ...state,
+                usersList: state.usersList.filter(user => user.id !== payload.userId),
+            };
+        }
+        case UPDATE_USER: {
+            return {
+                ...state,
+                usersList: state.usersList.map(user => {
+                    if (user.id === payload.userId) {
+                        return { ...user, ...payload.userData };
+                    }
+
+                    return user;
+                }),
+            };
+        }
+        default:
+            return state;
+    }
+};
+
+
+
+export default usersReducer
+
+
+
+
+
+
+
+/*
 import {ADD_USER, DELETE_USER, UPDATE_USER} from "./users.actions"
 
 
@@ -47,7 +93,7 @@ const usersReducer = (state = {userList: []}, action) => {
                 ...state,
                 userList: newList,
 
-                /*state.userList.map((user) => {
+                /!*state.userList.map((user) => {
                         if (user.id !== action.payload.userId) {
                             return { //создал обьект
                                 ...user, //заполнил старыми данными
@@ -55,7 +101,7 @@ const usersReducer = (state = {userList: []}, action) => {
                             };
                         }
                         return user;
-                    })*/
+                    })*!/
             };
 
 
@@ -66,3 +112,4 @@ const usersReducer = (state = {userList: []}, action) => {
 
 export default usersReducer;
 
+*/
