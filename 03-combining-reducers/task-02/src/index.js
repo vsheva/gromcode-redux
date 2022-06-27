@@ -1,47 +1,44 @@
-import './index.scss';
-import store, { increment, decrement, reset } from './store';
+import { createStore } from 'redux';
 
-const resultElem = document.querySelector('.counter__result');
-const incrementBtn = document.querySelector("[data-action='increment']");
-const resetBtn = document.querySelector("[data-action='reset']");
-const decrementBtn = document.querySelector("[data-action='decrement']");
+//1.action type
+const INCREMENT = 'COUNTER/INCREMENT';
+const DECREMENT = 'COUNTER/DECREMENT';
 
-
-//store.dispatch(action)
-
-const onIncrement = () => {
-  store.dispatch(increment());
+//actions
+ const increment = () => {
+  return {
+    type: INCREMENT,
+  };
 };
 
-const onDecrement = () => {
-  store.dispatch(decrement());
+ const decrement = () => {
+  return {
+    type: DECREMENT,
+  };
 };
 
-const onReset = () => {
-  store.dispatch(reset());
+ //2. reducer(state, action) => new state ({})
+//action.type - case INCREMENT => return STATE
+ const counterReducer = (state = 0, action) => {
+  switch (action.type) {
+    case INCREMENT:
+      return state + 1;
+    case DECREMENT:
+      return state - 1;
+    default:
+      return state;
+  }
 };
+ //3.store(reducer)
 
-incrementBtn.addEventListener('click', onIncrement);
-decrementBtn.addEventListener('click', onDecrement);
-resetBtn.addEventListener('click', onReset);
+ const store = createStore(counterReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
-//подписка на изменение state
-//получить состояние
+ //method store.dispatch(action function) -обновление состояния
+store.dispatch(increment());
+store.dispatch(increment());
+store.dispatch(increment());
+store.dispatch(increment());
+store.dispatch(decrement());
 
-store.subscribe(() => {
-  const state = store.getState();
-  const currentValue = state.history.reduce((acc, num) => acc + +num, 0);
-  const historyString = state.history.join('');
-  resultElem.textContent = state.history.length ? `${historyString} = ${currentValue}` : '';
-});
-
-/*
-store.subscribe(() => {
-  const state = store.getState();
-  const currentValue = state.value;
-  const historyString = state.history.join('');
-  resultElem.textContent = `${historyString}=${currentValue}`;
-});
-*/
-
-//console.log(store.getState().history) // ['+1', -1, '+1', '+1', -1]
+//method
+console.log(store.getState());
