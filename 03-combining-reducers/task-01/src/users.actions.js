@@ -7,18 +7,14 @@ export const UPDATE_USER = 'USERS/UPDATE_USER';
 export const addUser = (userData)=>{
     return {
         type: ADD_USER,
-        payload:{
-            userData,
-        }
+        payload:{userData,}
     };
 }
 
 export const deleteUser = (userId)=>{
     return {
         type: DELETE_USER,
-        payload:{
-            userId,
-        }
+        payload:{userId,}
     };
 }
 
