@@ -17,5 +17,5 @@ store.dispatch(reset());
 store.dispatch(addUser({id:1, name: "Tom"}))
 store.dispatch(addUser({id:2, name: "Bob"}))
 
-store.dispatch(deleteUser(1))
-store.dispatch(updateUser(2, {name: 'Bob Martin', age:17}))
+store.dispatch(deleteUser(2))
+
