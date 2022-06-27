@@ -4,7 +4,7 @@ import usersReducer from './users.reducer'
 
 const appReducer = combineReducers({
     counter: counterReducer,
-    user: usersReducer,
+    users: usersReducer,
 
 
 })
