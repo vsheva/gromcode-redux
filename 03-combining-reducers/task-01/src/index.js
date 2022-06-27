@@ -18,4 +18,4 @@ store.dispatch(addUser({id:1, name: "Tom"}))
 store.dispatch(addUser({id:2, name: "Bob"}))
 
 store.dispatch(deleteUser(2))
-
+store.dispatch(updateUser(1, { id: 3, name: 'Tom Fork' }));
