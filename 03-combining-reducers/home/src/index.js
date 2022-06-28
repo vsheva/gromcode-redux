@@ -1,47 +1,18 @@
-import './index.scss';
-import store, { increment, decrement, reset } from './store';
+import store from './store';
 
-const resultElem = document.querySelector('.counter__result');
-const incrementBtn = document.querySelector("[data-action='increment']");
-const resetBtn = document.querySelector("[data-action='reset']");
-const decrementBtn = document.querySelector("[data-action='decrement']");
+import { addProduct, removeProduct} from './cart.actions';
+import { setUser, removeUser} from './user.actions';
+import { setLanguage} from './language.actions';
+
+store.subscribe(() => {console.log(store.getState());});
+
+store.dispatch(setUser({name:"Bob"}));
+store.dispatch(removeUser());
 
 
-//store.dispatch(action)
+store.dispatch(addProduct({id:1, name: "Milk"}))
+store.dispatch(addProduct({id:2, name: "Cheese"}))
+store.dispatch(removeProduct(2))
 
-const onIncrement = () => {
-  store.dispatch(increment());
-};
+store.dispatch(setLanguage("en"))
 
-const onDecrement = () => {
-  store.dispatch(decrement());
-};
-
-const onReset = () => {
-  store.dispatch(reset());
-};
-
-incrementBtn.addEventListener('click', onIncrement);
-decrementBtn.addEventListener('click', onDecrement);
-resetBtn.addEventListener('click', onReset);
-
-//подписка на изменение state
-//получить состояние
-
-store.subscribe(() => {
-  const state = store.getState();
-  const currentValue = state.history.reduce((acc, num) => acc + +num, 0);
-  const historyString = state.history.join('');
-  resultElem.textContent = state.history.length ? `${historyString} = ${currentValue}` : '';
-});
-
-/*
-store.subscribe(() => {
-  const state = store.getState();
-  const currentValue = state.value;
-  const historyString = state.history.join('');
-  resultElem.textContent = `${historyString}=${currentValue}`;
-});
-*/
-
-//console.log(store.getState().history) // ['+1', -1, '+1', '+1', -1]

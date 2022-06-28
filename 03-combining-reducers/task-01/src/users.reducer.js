@@ -34,7 +34,7 @@ const usersReducer = (state = {userList: []}, action) => {
             return {
                 ...state,
                 userList: state.userList.map(user => {
-                        if (user.id !== action.payload.userId) {
+                        if (user.id === action.payload.userId) {
                             return {...user, ...action.payload.userData};
                         }
                         return user;
@@ -62,7 +62,7 @@ const initialState = {
     usersList: [],
 };
 
- const usersReducer = (state = initialState, { type, payload }) => {
+ const userReducer = (state = initialState, { type, payload }) => {
     switch (type) {
         case ADD_USER: {
             return {
@@ -95,7 +95,7 @@ const initialState = {
 
 
 
-export default usersReducer
+export default userReducer
 */
 
 
