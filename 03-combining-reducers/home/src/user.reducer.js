@@ -7,7 +7,7 @@ import { SET_USER, REMOVE_USER, } from './user.actions';
             return action.payload.userData
 
         case REMOVE_USER:
-            return 0;
+            return "";
 
 
         default:
