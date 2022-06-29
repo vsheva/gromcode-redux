@@ -26,8 +26,8 @@ const mapState = state => {
 
 const mapDispatch = {
   increment: counterActions.increment, //*вызываем action creator
-  decrement: counterActions.decrement, //*вызываем action creator
-  reset: counterActions.reset, //*вызываем action creator
+  decrement: counterActions.decrement,
+  reset: counterActions.reset,
 };
 
 const connector = connect(mapState, mapDispatch); //HOC
