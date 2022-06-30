@@ -2,18 +2,23 @@ import React from 'react';
 import { connect } from 'react-redux';
 import * as userActions from './users/users.actions';
 
+
 class Users extends React.Component {
-  onUserCreate = () => {
+
+  //user.action ожидает данные, к-ые нужно отправить редюсеру, к-ые создаем здесь
+  onUserCreate = () => {     //обработчик на кнопку
     const id = Math.round(Math.random() * 10000000);
     const newUser = {
       id,
-      name: `User#${id}`,
+      name: `User# ${id}`,
     };
-    this.props.createUser(newUser);
+    this.props.createUser(newUser); //создаем на основании ф-ии из mapDispatch
   };
+
 
   render() {
     const { users, deleteUser } = this.props;
+
     return (
       <div className="users">
         <button onClick={this.onUserCreate} className="users__create-btn">
@@ -34,16 +39,17 @@ class Users extends React.Component {
   }
 }
 
-const mapState = state => {
+const mapState = (state) => {
   return {
-    users: state.users.usersList,
+    users: state.users.usersList, //обращаемся к стору
   };
 };
 
 const mapDispatch = {
-  createUser: userActions.addUser,
-  deleteUser: userActions.deleteUser, //*
+  createUser: userActions.addUser,  //отправляем в UI
+  deleteUser: userActions.deleteUser, //достук к action, к-ым буду создавать пользователя
 };
+
 
 const connector = connect(mapState, mapDispatch);
 
