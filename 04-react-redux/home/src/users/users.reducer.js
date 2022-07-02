@@ -1,35 +1,26 @@
-import { ADD_USER, DELETE_USER, UPDATE_USER } from './users.actions';
+import { LEFT, RIGHT } from './users.actions';
 
 const initialState = {
   usersList: [],
+  currentPage: 0,
 };
 
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_USER: {
+    case LEFT: {
       return {
         ...state,
-        usersList: state.usersList.concat(action.payload.userData),
-      };
-    }
-    case DELETE_USER: {
-      return {
-        ...state,
-        usersList: state.usersList.filter(user => user.id !== action.payload.userId),
-      };
-    }
-    case UPDATE_USER: {
-      return {
-        ...state,
-        usersList: state.usersList.map(user => {
-          if (user.id === action.payload.userId) {
-            return { ...user, ...action.payload.userData };
-          }
+        currentPage:state.currentPage-1
 
-          return user;
-        }),
       };
     }
+    case RIGHT: {
+      return {
+        ...state,
+        currentPage:state.currentPage+1
+      };
+    }
+
     default:
       return state;
   }
