@@ -10,7 +10,7 @@ class Users extends React.Component {
     const id = Math.round(Math.random() * 10000000);
     const newUser = {
       id,
-      name: `User# ${id}`,
+      name: `User # ${id}`,
     };
     this.props.createUser(newUser); //создаем на основании ф-ии из mapDispatch
   };
@@ -41,18 +41,35 @@ class Users extends React.Component {
 
 const mapState = (state) => {
   return {
-    users: state.users.usersList, //обращаемся к стору
+    users: state.users.usersList, //обращаемся к стору(берем users,
+    // так как здесь users: usersReducer)->userReducer()->смотрим initial state у нас usersList: []
   };
 };
 
 const mapDispatch = {
-  createUser: userActions.addUser,  //отправляем в UI
-  deleteUser: userActions.deleteUser, //достук к action, к-ым буду создавать пользователя
+  createUser: userActions.addUser,    //из импорта приходит userActions, отправляем наверх на перерендер UI
+  deleteUser: userActions.deleteUser, //так как хочу получить доступ к action, к-ым буду создавать пользователя
 };
 
 
 const connector = connect(mapState, mapDispatch);
 
-const ConnectedUsers = connector(Users);
+const ConnectedUsers = connector(Users); //HOC - создаем новый компонент на основе старовго
 
 export default ConnectedUsers;
+
+
+// задипатчил action ->redux store обновился, создался новый на основании
+//старого и action -> ф-я коннектор отреагировала -в mapState получаем новый
+//state -> из него достал массив пользователей ->передал в свойстве users
+//в свою компоненту, чтобы компонента его отрендерила
+
+
+//deleteButton
+//свойство deleteUser, которое при вызове будет диспатчить в стор action.deleteUser
+//прокидывем deleteUser через пропсы в компонту
+//эта ф-я вызывается при клике на кнопку
+
+//action.deleteUser принимает id пользователя, которого нужно удалить
+// соответственно его пердаем в эту ф-ю onClick={() => deleteUser(user.id)} //оборачиваем вызов этой ф-ии в callback, чтобы вызывалась по клику, а не сразк
+// при нажатии на которую бедет диспатчиться action.deleteUser с правильным идентификатором

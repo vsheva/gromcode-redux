@@ -22,7 +22,7 @@ const Counter = ({ counter, increment, decrement, reset }) => {
 //3. настройка коннектора
 const mapState = state => {
   return {
-    counter: state,  //передаем наверх с помощью коннектора
+    counter: state,  //какие данные-props из состояния мы передаем наверх с помощью коннектора
   };
 };
 
