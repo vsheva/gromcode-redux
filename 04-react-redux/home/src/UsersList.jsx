@@ -54,7 +54,6 @@ import Pagination from './Pagination.jsx';
 import User from './User.jsx';
 
 
-
 const UsersList=({users, goPrev, goNext})=> {
     console.log("users in UserList", users)
     console.log("currentPage", users.currentPage)
