@@ -6,11 +6,11 @@ const Pagination = ({ goPrev, goNext, itemsPerPage, totalItems, currentPage }) =
 
   return (
     <div className="pagination">
-      <button disabled={!isPrevPageAvailable} onClick={() => goPrev()} className="btn">
+      <button disabled={!isPrevPageAvailable} onClick={goPrev} className="btn">
         {isPrevPageAvailable && '←'}
       </button>
       <span className="pagination__page">{currentPage}</span>
-      <button disabled={!isNextPageAvailable} onClick={() => goNext()} className="btn">
+      <button disabled={!isNextPageAvailable} onClick={goNext} className="btn">
         {isNextPageAvailable && '→'}
       </button>
     </div>
@@ -18,3 +18,11 @@ const Pagination = ({ goPrev, goNext, itemsPerPage, totalItems, currentPage }) =
 };
 
 export default Pagination;
+
+/*
+<button disabled={!isPrevPageAvailable} onClick={() => goPrev()} className="btn">
+    {isPrevPageAvailable && '←'}
+</button>
+<span className="pagination__page">{currentPage}</span>
+<button disabled={!isNextPageAvailable} onClick={() => goNext()} className="btn">
+    {isNextPageAvailable && '→'}*/
