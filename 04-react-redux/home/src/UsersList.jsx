@@ -4,20 +4,20 @@ import * as counterActions from './users/users.actions';
 import Pagination from './Pagination.jsx';
 import User from './User.jsx';
 
-const UsersList = ({ users, goPrev, goNext }) => {
+const UsersList = ({ usersList, currentPage, goPrev, goNext }) => {
   const itemsPerPage = 3;
-  const startIndex = (users.currentPage - 1) * itemsPerPage;
+  const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-  const userToRender = users.usersList.slice(startIndex, endIndex);
+  const userToRender = usersList.slice(startIndex, endIndex);
 
   return (
     <div>
       <Pagination
-        currentPage={users.currentPage}
+        currentPage={currentPage}
         goPrev={goPrev}
         goNext={goNext}
         itemsPerPage={itemsPerPage}
-        totalItems={users.usersList.length}
+        totalItems={usersList.length}
       />
       <ul className="users">
         {userToRender.map(user => (
@@ -45,7 +45,7 @@ const connector = connect(mapStateToProps, mapDispatchToProps);
 
 export default connector(UsersList);
 
-//export default connect(mapStateToProps, mapDispatchToProps)(UsersList)
+
 
 /*import React from 'react';
 import {connect} from 'react-redux';
