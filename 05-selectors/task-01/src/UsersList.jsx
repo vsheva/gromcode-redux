@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import * as counterActions from './users/users.actions';
 import Pagination from './Pagination.jsx';
 import User from './User.jsx';
-import {usersListSelector, currentPageSelector} from './users.selectors';
+import { usersListSelector, currentPageSelector } from './users.selectors';
 
 const UsersList = ({ usersList, currentPage, goPrev, goNext }) => {
   const itemsPerPage = 3;
@@ -45,8 +45,6 @@ const mapDispatchToProps = {
 //const connector =
 
 export default connect(mapStateToProps, mapDispatchToProps)(UsersList);
-
-
 
 /*import React from 'react';
 import {connect} from 'react-redux';
