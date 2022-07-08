@@ -4,7 +4,7 @@ store.subscribe(() => {
   console.log(store.getState());
 });
 
-//method store.dispatch(action function) -обновление состояния
+//method users.dispatch(action function) -обновление состояния
 store.dispatch(increment());
 store.dispatch(increment());
 store.dispatch(increment());

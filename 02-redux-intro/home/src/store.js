@@ -1,7 +1,7 @@
 import { createStore } from 'redux';
 import userReducer from './users.reducer';
 
-//store
+//users
 const store = createStore(userReducer);
 
 export default store;

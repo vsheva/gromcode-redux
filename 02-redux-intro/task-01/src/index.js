@@ -29,11 +29,11 @@ const DECREMENT = 'COUNTER/DECREMENT';
       return state;
   }
 };
- //3.store(reducer)
+ //3.users(reducer)
 
  const store = createStore(counterReducer);
 
- //method store.dispatch(action function) -обновление состояния
+ //method users.dispatch(action function) -обновление состояния
 store.dispatch(increment());
 store.dispatch(increment());
 store.dispatch(increment());

@@ -25,7 +25,7 @@ const counterReducer = (state = 0, action) => {
       return state;
   }
 };
-//3.store(reducer)
+//3.users(reducer)
 
 export const store = createStore(
   counterReducer,
