@@ -4,7 +4,7 @@ store.subscribe(() => {
   console.log(store.getState());
 });
 
-//method users.dispatch(action function) -обновление состояния
+//method weather.dispatch(action function) -обновление состояния
 store.dispatch(increment());
 store.dispatch(increment());
 store.dispatch(increment());

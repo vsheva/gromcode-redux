@@ -1,7 +1,7 @@
 import { createStore } from 'redux';
 import userReducer from './users.reducer';
 
-//users
+//weather
 const store = createStore(userReducer);
 
 export default store;

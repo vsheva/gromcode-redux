@@ -48,29 +48,29 @@ export default connect(mapStateToProps, mapDispatchToProps)(UsersList);
 
 /*import React from 'react';
 import {connect} from 'react-redux';
-import  * as counterActions from './users/users.actions';
+import  * as counterActions from './weather/weather.actions';
 import Pagination from './Pagination.jsx';
 import User from './User.jsx';
 
 
-const UsersList=({users, goPrev, goNext})=> {
-    console.log("users in UserList", users)
-    console.log("currentPage", users.currentPage)
+const UsersList=({weather, goPrev, goNext})=> {
+    console.log("weather in UserList", weather)
+    console.log("currentPage", weather.currentPage)
     const itemsPerPage = 3;
-    const startIndex = (users.currentPage - 1) * itemsPerPage;
+    const startIndex = (weather.currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
-    const userToRender = users.usersList.slice(startIndex, endIndex);
+    const userToRender = weather.usersList.slice(startIndex, endIndex);
 
     return (
         <div>
             <Pagination
-                currentPage={users.currentPage}
+                currentPage={weather.currentPage}
                 goPrev={goPrev}
                 goNext={goNext}
                 itemsPerPage={itemsPerPage}
-                totalItems={users.usersList.length}
+                totalItems={weather.usersList.length}
             />
-            <ul className="users">
+            <ul className="weather">
                 {userToRender.map(user => (
                     <User key={user.id} name={user.name} age={user.age}/>
                 ))}
@@ -83,7 +83,7 @@ const UsersList=({users, goPrev, goNext})=> {
 const mapStateToProps = (state) =>  {
     console.log("state",state)
     return {
-        users: {
+        weather: {
             usersList: state.usersList,
             currentPage: state.currentPage,
         }

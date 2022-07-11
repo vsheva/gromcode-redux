@@ -8,7 +8,7 @@ export const showSpinner = () => {
   };
 };
 
-export const userDataReceived = userData => {
+export const userDataReceived = (userData) => {
   return {
     type: USER_DATA_RECEIVED,
     payload: {
@@ -17,11 +17,14 @@ export const userDataReceived = userData => {
   };
 };
 
-export const fetchUserData = userName => {
+export const fetchUserData = (userName) => {
+
+  //асинхронный actionCreator возвращает ф-ию, т.е. ф-я является action
   return function (dispatch) {
-    dispatch(showSpinner());
-    getUserData(userName).then(userData => {
-      dispatch(userDataReceived(userData));
+         dispatch(showSpinner());
+
+         getUserData(userName)
+             .then((userData) => {dispatch(userDataReceived(userData));
     });
   };
 };

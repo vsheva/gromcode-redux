@@ -4,9 +4,13 @@ import { connect } from 'react-redux';
 import * as usersActions from './users.actions';
 
 class SearchField extends Component {
-  state = {
-    userName: '',
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      userName: '',
+    };
+  }
+
 
   onChange = event => {
     this.setState({ userName: event.target.value });

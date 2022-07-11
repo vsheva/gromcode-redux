@@ -56,7 +56,7 @@ export default usersReducer;
 // with payload
 
 /*
-import { ADD_USER, DELETE_USER, UPDATE_USER } from './users.actions';
+import { ADD_USER, DELETE_USER, UPDATE_USER } from './weather.actions';
 
 const initialState = {
     usersList: [],

@@ -7,7 +7,7 @@ const resetBtn = document.querySelector("[data-action='reset']");
 const decrementBtn = document.querySelector("[data-action='decrement']");
 
 
-//users.dispatch(action)
+//weather.dispatch(action)
 
 const onIncrement = () => {
   store.dispatch(increment());
@@ -36,12 +36,12 @@ store.subscribe(() => {
 });
 
 /*
-users.subscribe(() => {
-  const state = users.getState();
+weather.subscribe(() => {
+  const state = weather.getState();
   const currentValue = state.value;
   const historyString = state.history.join('');
   resultElem.textContent = `${historyString}=${currentValue}`;
 });
 */
 
-//console.log(users.getState().history) // ['+1', -1, '+1', '+1', -1]
+//console.log(weather.getState().history) // ['+1', -1, '+1', '+1', -1]

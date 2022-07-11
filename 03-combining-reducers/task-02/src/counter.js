@@ -25,7 +25,7 @@ const counterReducer = (state = 0, action) => {
       return state;
   }
 };
-//3.users(reducer)
+//3.weather(reducer)
 
 export const store = createStore(
   counterReducer,

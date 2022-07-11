@@ -33,7 +33,7 @@ UserInfo.defaultValue = {
   userData: null,
 };
 
-const mapState = state => {
+const mapState = (state) => {
   return {
     isFetching: isFetchingSelector(state),
     userData: userDataSelector(state),

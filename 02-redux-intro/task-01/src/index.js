@@ -29,11 +29,11 @@ const DECREMENT = 'COUNTER/DECREMENT';
       return state;
   }
 };
- //3.users(reducer)
+ //3.weather(reducer)
 
  const store = createStore(counterReducer);
 
- //method users.dispatch(action function) -обновление состояния
+ //method weather.dispatch(action function) -обновление состояния
 store.dispatch(increment());
 store.dispatch(increment());
 store.dispatch(increment());
